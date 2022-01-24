@@ -1,0 +1,287 @@
+/* global styles */
+:root {
+  --primary-color: brown;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+/* style for navbar */
+.main-nav {
+  height: 5rem;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem 1rem 1rem;
+  box-shadow: 3px 3px 6px rgb(172, 172, 172);
+}
+
+.logo-navbtn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* logo */
+.logo {
+  margin-right: 2rem;
+}
+
+.logo h1 {
+  color: var(--primary-color);
+  border: 5px solid var(--primary-color);
+  padding: 0.3rem 1rem;
+  font-size: 26px;
+}
+
+/* nav btn */
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  height: 25px;
+  align-items: flex-start;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.nav-btn div {
+  width: 40px;
+  height: 3px;
+  background-color: black;
+}
+
+.nav-btn > * {
+  pointer-events: none;
+}
+
+.nav-btn :nth-child(2) {
+  width: 30px;
+}
+
+/* product title */
+.product-title {
+  font-size: 26px;
+}
+
+/* user nav  */
+.user-nav {
+  display: flex;
+  align-items: center;
+}
+
+.user-image {
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  background-position: center;
+  margin-right: 1rem;
+}
+
+.user-image img {
+  border-radius: 50%;
+}
+
+.username {
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.notification-btn {
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.notification-btn p {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background-color: red;
+  color: white;
+  height: 12px;
+  width: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 10px;
+}
+
+.fa-bell {
+  font-size: 2rem;
+}
+
+.toggle-user-menu {
+  padding: 0 1rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 1rem;
+}
+
+/* sidbar */
+.sidebar {
+  margin-top: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: calc(100vh - 6rem);
+  position: sticky;
+  border: 5px solid rgb(235, 233, 233);
+}
+
+.sidebar ul li,
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar ul li {
+  padding: 0.5rem 1rem 1rem 0rem;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.sidebar ul li a {
+  padding-right: 2rem;
+  /* margin-right: 1rem; */
+  color: black;
+}
+
+.sidebar ul li p {
+  padding-left: 1rem;
+}
+
+/* dropdown btn */
+.activeDropdownBtn {
+  transform: rotate(180deg);
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  left: -0.5rem;
+}
+
+.submenu li {
+  background: rgb(223, 221, 221);
+  padding: 0.5rem 0 !important;
+  margin: 0.5rem;
+}
+
+.submenu li a {
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* main content  */
+.main-content-with-footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1rem;
+  height: calc(100vh - 6rem);
+}
+
+article,
+.page-navigation,
+.page-navigation a {
+  display: flex;
+  align-items: center;
+}
+
+article {
+  justify-content: space-between;
+  padding: 0.5rem 2rem 1rem 1rem;
+  border: 5px solid rgb(235, 233, 233);
+  height: 100%;
+  align-items: flex-start;
+}
+
+.page-title {
+  padding: 0.5rem 0;
+}
+
+.page-navigation a {
+  color: grey;
+  font-size: 12px;
+}
+
+.page-navigation .activepage {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.page-navigation a p {
+  padding: 0.5rem 1rem;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  border: 5px solid rgb(235, 233, 233);
+  margin-top: 1rem;
+  padding-right: 3rem;
+}
+
+footer a {
+  color: black;
+}
+
+@media screen and (min-width: 1000px) {
+  .sidebar ul li {
+    width: 250px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .nav-btn {
+    pointer-events: none;
+  }
+}
+
+/* customize scrollbar */
+::-webkit-scrollbar {
+  visibility: hidden;
+  width: 7px;
+  height: 15px;
+  position: absolute;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(173, 170, 170);
+  border-radius: 30px;
+}
